@@ -1,0 +1,6 @@
+*-mirror/
+
+*.svn
+
+cs-authors.map
+cel-authors.map
