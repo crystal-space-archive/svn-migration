@@ -69,11 +69,17 @@ cel.svn: cel-mirror
 stubmap: cs-stubmap cel-stubmap
 	sort -u cs-authors.map cel-authors.map > authors.map
 
-cslibs.filter.svn:
+cslibs.filter.svn: cs.svn
 	repocutter sift '^CSlibs'<cs.svn | repocutter pathrename '^CSlibs/migrated' 'CSlibs' | repocutter -r 28212:28213 deselect | repocutter pop > cslibs.filter.svn
 
-csextra.filter.svn:
+csextra.filter.svn: cs.svn
 	repocutter sift '^CSExtra'<cs.svn | repocutter pathrename '^CSExtra/migrated' 'CSExtra' '^CSExtra/branches/soc/editor' 'CSExtra/branches/soc' | repocutter pop > csextra.filter.svn
+
+crystalcore.filter.svn: cs.svn
+	repocutter sift '^crystalcore'<cs.svn | repocutter pathrename '^crystalcore/migrated' 'crystalcore' | repocutter pop > crystalcore.filter.svn
+
+siteskin.filter.svn: cs.svn
+	repocutter sift '^siteskin'<cs.svn | repocutter pop > siteskin.filter.svn
 
 %-git: %.filter.svn %.lift cs.opts base.lift cs.map $(EXTRAS)
 	$(REPOSURGEON) $(VERBOSITY) 'logfile $(LOGFILE)' 'script cs.opts' "read $(READ_OPTIONS) <$*.filter.svn" 'authors read <authors.map' 'sourcetype svn' 'prefer git' 'script base.lift' 'script $*.lift' 'rebuild $*-git'
