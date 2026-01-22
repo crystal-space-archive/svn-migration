@@ -1,6 +1,9 @@
 *-mirror/
+*-git/
 
 *.svn
+*.log
+*.fo
 
 cs-authors.map
 cel-authors.map

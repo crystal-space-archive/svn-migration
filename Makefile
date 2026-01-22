@@ -69,6 +69,12 @@ cel.svn: cel-mirror
 stubmap: cs-stubmap cel-stubmap
 	sort -u cs-authors.map cel-authors.map > authors.map
 
+cslibs-filter.svn:
+	repocutter sift '^CSlibs'<cs.svn | repocutter pathrename '^CSlibs/migrated' 'CSlibs' | repocutter -r 28212:28213 deselect | repocutter pop > cslibs.filter.svn
+
+%-git: %-filter.svn cs.opts cs.lift cs.map $(EXTRAS)
+	$(REPOSURGEON) $(VERBOSITY) 'logfile $(LOGFILE)' 'script cs.opts' "read $(READ_OPTIONS) <$*.filter.svn" 'authors read <authors.map' 'sourcetype svn' 'prefer git' 'script cs.lift' 'legacy write >$*.fo' 'rebuild $*-git'
+
 clean:
 	rm -rf *.svn *-authors.map
 
