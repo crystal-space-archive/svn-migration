@@ -84,6 +84,9 @@ siteskin.filter.svn: cs.svn
 csediting.filter.svn: cs.svn
 	repocutter sift '^CSEditing'<cs.svn | repocutter pathrename '^CSEditing/branches/soc2014/terrainedit' 'CSEditing/branches/soc2014' | repocutter pop > csediting.filter.svn
 
+csexporters.filter.svn: cs.svn
+	repocutter pathrename '^Exporters' 'CSExporters' <cs.svn | repocutter sift '^CSExporters' | repocutter pathrename '^CSExporters/CrystalPnP/trunk' 'trunk/CrystalPnP' '^CSExporters/CrystalMax/trunk' 'trunk/CrystalMax' > csexporters.filter.svn
+
 %-git: %.filter.svn %.lift cs.opts base.lift cs.map $(EXTRAS)
 	$(REPOSURGEON) $(VERBOSITY) 'logfile $(LOGFILE)' 'script cs.opts' "read $(READ_OPTIONS) <$*.filter.svn" 'authors read <authors.map' 'sourcetype svn' 'prefer git' 'script base.lift' 'script $*.lift' 'rebuild $*-git'
 
