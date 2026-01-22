@@ -87,6 +87,9 @@ csediting.filter.svn: cs.svn
 csexporters.filter.svn: cs.svn
 	repocutter pathrename '^Exporters' 'CSExporters' <cs.svn | repocutter sift '^CSExporters' | repocutter pathrename '^CSExporters/CrystalPnP/trunk' 'trunk/CrystalPnP' '^CSExporters/CrystalMax/trunk' 'trunk/CrystalMax' > csexporters.filter.svn
 
+csassets.filter.svn: cs.svn
+	repocutter sift '^CSAssets'<cs.svn | repocutter pop > csassets.filter.svn
+
 %-git: %.filter.svn %.lift cs.opts base.lift cs.map $(EXTRAS)
 	$(REPOSURGEON) $(VERBOSITY) 'logfile $(LOGFILE)' 'script cs.opts' "read $(READ_OPTIONS) <$*.filter.svn" 'authors read <authors.map' 'sourcetype svn' 'prefer git' 'script base.lift' 'script $*.lift' 'rebuild $*-git'
 
