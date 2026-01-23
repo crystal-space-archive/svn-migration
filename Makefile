@@ -90,6 +90,9 @@ csexporters.filter.svn: cs.svn
 csassets.filter.svn: cs.svn
 	repocutter sift '^CSAssets'<cs.svn | repocutter pop > csassets.filter.svn
 
+cs.filter.svn: cs.svn
+	repocutter sift '^CS/.*'<cs.svn | repocutter pathrename '^CS/migrated' 'CS' | repocutter pop > cs.filter.svn
+
 %-git: %.filter.svn %.lift cs.opts base.lift cs.map $(EXTRAS)
 	$(REPOSURGEON) $(VERBOSITY) 'logfile $(LOGFILE)' 'script cs.opts' "read $(READ_OPTIONS) <$*.filter.svn" 'authors read <authors.map' 'sourcetype svn' 'prefer git' 'script base.lift' 'script $*.lift' 'rebuild $*-git'
 
