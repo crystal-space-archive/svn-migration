@@ -39,7 +39,7 @@ CEL_REMOTE_URL = svn://svn.code.sf.net/p/cel/code/
 READ_OPTIONS =
 #CHECKOUT_OPTIONS = --ignore-externals
 DUMPFILTER = cat
-VERBOSITY = "set progress"
+VERBOSITY = "set flag progress"
 REPOSURGEON = reposurgeon
 REPOCUTTER = repocutter
 LOGFILE = conversion.log
@@ -94,7 +94,7 @@ cs.filter.svn: cs.svn
 	repocutter sift '^CS/.*'<cs.svn | repocutter pathrename '^CS/migrated' 'CS' | repocutter pop > cs.filter.svn
 
 %-git: %.filter.svn %.lift cs.opts base.lift cs.map $(EXTRAS)
-	$(REPOSURGEON) $(VERBOSITY) 'logfile $(LOGFILE)' 'script cs.opts' "read $(READ_OPTIONS) <$*.filter.svn" 'authors read <authors.map' 'sourcetype svn' 'prefer git' 'script base.lift' 'script $*.lift' 'rebuild $*-git'
+	$(REPOSURGEON) $(VERBOSITY) 'set logfile $(LOGFILE)' 'do cs.opts' "read $(READ_OPTIONS) <$*.filter.svn" 'authors read <authors.map' 'select svn' 'prefer git' 'do base.lift' 'do $*.lift' 'rebuild $*-git'
 
 clean:
 	rm -rf *.svn *-authors.map
