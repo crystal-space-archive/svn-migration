@@ -1,6 +1,17 @@
+delete tag /-root$/
+delete tag /emptycommit/
+
 <3845> delete
 
+<276>,<277> reparent
+<277> squash --tagback --pushback
+<855>,<856> reparent
+<856> squash --tagback --pushback
+<884>,<885> reparent
+<885> squash --tagback --pushback
 <3842>,<3848> reparent
+
+tagify
 
 rename branch refs/heads/release-V1.0 refs/heads/release/V1.0
 rename branch refs/heads/release-V1.2 refs/heads/release/V1.2
@@ -11,3 +22,5 @@ rename branch refs/heads/soc2008-ai refs/heads/soc/2008/ai
 rename branch refs/heads/soc2009-quests refs/heads/soc/2009/quests
 rename branch refs/heads/soc2010-navmesh refs/heads/soc/2010/navmesh
 rename branch refs/heads/soc2012-ai refs/heads/soc/2012/ai
+
+delete branch refs/heads/jorrit
