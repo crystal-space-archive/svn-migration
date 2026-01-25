@@ -1,0 +1,13 @@
+<3845> delete
+
+<3842>,<3848> reparent
+
+rename branch refs/heads/release-V1.0 refs/heads/release/V1.0
+rename branch refs/heads/release-V1.2 refs/heads/release/V1.2
+rename branch refs/heads/release-V1.4 refs/heads/release/V1.4
+rename branch refs/heads/release-V2.0 refs/heads/release/V2.0
+rename branch refs/heads/soc2007-ai refs/heads/soc/2007/ai
+rename branch refs/heads/soc2008-ai refs/heads/soc/2008/ai
+rename branch refs/heads/soc2009-quests refs/heads/soc/2009/quests
+rename branch refs/heads/soc2010-navmesh refs/heads/soc/2010/navmesh
+rename branch refs/heads/soc2012-ai refs/heads/soc/2012/ai

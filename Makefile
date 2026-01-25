@@ -93,6 +93,9 @@ csassets.filter.svn: cs.svn
 cs.filter.svn:
 	(cd cs-mirror/ >/dev/null; repotool export) | repocutter sift '^CS/.*' | repocutter pathrename '^CS/migrated' 'CS' | repocutter pathrename '^CS/branches/feature/(.*)' 'CS/branches/feature-$${1}' '^CS/branches/release/(.*)' 'CS/branches/release-$${1}' '^CS/branches/soc/(.*)' 'CS/branches/soc-$${1}' '^CS/branches/soc2007/(.*)' 'CS/branches/soc2007-$${1}' '^CS/branches/soc2008/(.*)' 'CS/branches/soc2008-$${1}' '^CS/branches/soc2009/(.*)' 'CS/branches/soc2009-$${1}' '^CS/branches/soc2010/(.*)' 'CS/branches/soc2010-$${1}' '^CS/branches/soc2011/(.*)' 'CS/branches/soc2011-$${1}' '^CS/branches/soc2012/(.*)' 'CS/branches/soc2012-$${1}' '^CS/branches/soc2013/(.*)' 'CS/branches/soc2013-$${1}' '^CS/branches/soc2014/(.*)' 'CS/branches/soc2014-$${1}' | repocutter pop > cs.filter.svn
 
+cel.filter.svn: cel.svn
+	repocutter pathrename '^cel/migrated' 'cel' <cel.svn | repocutter pathrename '^cel/branches/release/(.*)' 'cel/branches/release-$${1}' '^cel/branches/soc2007/(.*)' 'cel/branches/soc2007-$${1}' '^cel/branches/soc2008/(.*)' 'cel/branches/soc2008-$${1}' '^cel/branches/soc2009/(.*)' 'cel/branches/soc2009-$${1}' '^cel/branches/soc2010/(.*)' 'cel/branches/soc2010-$${1}' '^cel/branches/soc2012/(.*)' 'cel/branches/soc2012-$${1}' | repocutter pop > cel.filter.svn
+
 %-git: %.filter.svn %.lift cs.opts base.lift cs.map $(EXTRAS)
 	$(REPOSURGEON) $(VERBOSITY) 'set logfile $(LOGFILE)' 'do cs.opts' "read $(READ_OPTIONS) <$*.filter.svn" 'authors read <authors.map' 'select svn' 'prefer git' 'do base.lift' 'do $*.lift' 'rebuild $*-git'
 
