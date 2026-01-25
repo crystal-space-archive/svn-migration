@@ -1,3 +1,5 @@
+delete tag /emptycommit/
+
 <26916>,<27042> reparent
 
-rename branch refs/heads/soc refs/heads/soc/editor
+rename branch refs/heads/soc refs/heads/soc/2007/editor

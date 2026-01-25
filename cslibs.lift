@@ -1,3 +1,6 @@
+delete tag /-root$/
+delete tag /emptycommit/
+
 delete branch refs/heads/res
 
 rename branch refs/heads/1.2 refs/heads/release/1.2
