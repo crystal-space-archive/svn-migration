@@ -1,0 +1,7 @@
+delete branch refs/heads/res
+
+rename branch refs/heads/1.2 refs/heads/release/1.2
+rename branch refs/heads/1.4 refs/heads/release/1.4
+rename branch refs/heads/2.0 refs/heads/release/2.0
+
+<127>,<128> reparent

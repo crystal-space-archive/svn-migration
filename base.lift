@@ -4,3 +4,6 @@ ignores --translate
 
 gitify
 
+delete path /.cvsignore$/
+delete tag /-root$/
+delete tag /emptycommit/
