@@ -1,3 +1,117 @@
+delete tag /emptycommit/
+
+<374> squash --tagback --pushback
+<371> squash --tagback --pushback
+<1211> squash --tagback --pushback
+<1982> squash --tagback --pushback
+<2303> squash --tagback --pushback
+<2925> squash --tagback --pushback
+<9675> squash --tagback --pushback
+<13467> squash --tagback --pushback
+<25709> squash --tagback --pushback
+<25885> squash --tagback --pushback
+<26009> squash --tagback --pushback
+<26232> squash --tagback --pushback
+<26443> squash --tagback --pushback
+<27332> squash --tagback --pushback
+<27360> squash --tagback --pushback
+<27605> squash --tagback --pushback
+<27805> squash --tagback --pushback
+
+<29708> squash --tagback --pushback
+<29707> squash --tagback --pushback
+<29706> squash --tagback --pushback
+
+<30537> squash --tagback --pushback
+<32522> squash --tagback --pushback
+<32658> squash --tagback --pushback
+<33240> squash --tagback --pushback
+<37179> squash --tagback --pushback
+<37211> squash --tagback --pushback
+<37262> squash --tagback --pushback
+<37327> squash --tagback --pushback
+<38265> squash --tagback --pushback
+
+<415>,<416> reparent
+<416> squash --tagback --pushback
+
+<542>,<543> reparent
+
+<818>,<819> reparent
+<819> squash --tagback --pushback
+
+<1465>,<1466> reparent
+<1466> squash --tagback --pushback
+
+<4337>,<4338> reparent
+<4338> squash --tagback --pushback
+
+<4937>,<4938> reparent
+<4938> squash --tagback --pushback
+
+<5832>,<5833> reparent
+<5833> squash --tagback --pushback
+
+<8623>,<8624> reparent
+<8624> squash --tagback --pushback
+
+<9031>,<9032> reparent
+<9032> squash --tagback --pushback
+
+<10002>,<10003> reparent
+<10003> squash --tagback --pushback
+
+<10094>,<10095> reparent
+<10095> squash --tagback --pushback
+
+<12584>,<12585> reparent
+<12585> squash --tagback --pushback
+
+<12694>,<12695> reparent
+<12695> squash --tagback --pushback
+
+<13087>,<13088> reparent
+<13088> squash --tagback --pushback
+
+<13643>,<13644> reparent
+<13644> squash --tagback --pushback
+
+<15600> squash --tagback --pushback
+
+<18424>,<18425> reparent
+<18425> squash --tagback --pushback
+
+<18490>,<18491> reparent
+<18491> squash --tagback --pushback
+
+<18579>,<18580> reparent
+<18580> squash --tagback --pushback
+
+<18878>,<18879> reparent
+<18879> squash --tagback --pushback
+
+<371> delete
+<1315> delete
+<3200> delete
+<3202> delete
+<3211> delete
+<3373> delete
+<3384> delete
+<3435> delete
+<3450> delete
+<5252> delete
+<9469> delete
+
+<32322> delete
+<32324> delete
+<32326> delete
+<32328> delete
+<32319>,<32331> reparent
+<32332> delete
+<32319>,<32333> reparent
+<32319>,<32334> reparent
+<32319>,<32351> reparent
+
 rename branch refs/heads/feature-android refs/heads/feature/android
 rename branch refs/heads/feature-applepie refs/heads/feature/applepie
 rename branch refs/heads/feature-atomicops refs/heads/feature/atomicops
@@ -69,3 +183,4 @@ rename branch refs/heads/soc2014-locomotion refs/heads/soc/2014/locomotion
 rename branch refs/heads/soc2014-shadowmapping refs/heads/soc/2014/shadowmapping
 rename branch refs/heads/soc2014-terrainedit refs/heads/soc/2014/terrainedit
 
+delete branch refs/heads/Jorrit_Tyberghein
