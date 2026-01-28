@@ -1,5 +1,10 @@
 # Lift commands for cs
 
+authors read <authors.map
+
+select svn
+prefer git
+
 ignores --translate
 
 gitify

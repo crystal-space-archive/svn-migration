@@ -97,7 +97,7 @@ cel.filter.svn: cel.svn
 	repocutter pathrename '^cel/migrated' 'cel' <cel.svn | repocutter pathrename '^cel/branches/release/(.*)' 'cel/branches/release-$${1}' '^cel/branches/soc2007/(.*)' 'cel/branches/soc2007-$${1}' '^cel/branches/soc2008/(.*)' 'cel/branches/soc2008-$${1}' '^cel/branches/soc2009/(.*)' 'cel/branches/soc2009-$${1}' '^cel/branches/soc2010/(.*)' 'cel/branches/soc2010-$${1}' '^cel/branches/soc2012/(.*)' 'cel/branches/soc2012-$${1}' | repocutter pop > cel.filter.svn
 
 %-git: %.filter.svn %.lift cs.opts base.lift cs.map $(EXTRAS)
-	$(REPOSURGEON) $(VERBOSITY) 'set logfile $(LOGFILE)' 'do cs.opts' "read $(READ_OPTIONS) <$*.filter.svn" 'authors read <authors.map' 'select svn' 'prefer git' 'do base.lift' 'do $*.lift' 'rebuild $*-git'
+	$(REPOSURGEON) $(VERBOSITY) 'set logfile $(LOGFILE)' 'do cs.opts' "read $(READ_OPTIONS) <$*.filter.svn" 'do base.lift' 'do $*.lift' 'rebuild $*-git'
 
 clean:
 	rm -rf *.svn *-authors.map

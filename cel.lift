@@ -1,6 +1,7 @@
 delete tag /-root$/
 delete tag /emptycommit/
 
+<3798> delete
 <3845> delete
 
 <276>,<277> reparent
